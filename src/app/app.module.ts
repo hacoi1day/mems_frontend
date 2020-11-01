@@ -7,6 +7,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {HomeModule} from "./home/home.module";
+import {HttpClientModule} from "@angular/common/http";
+import {AuthModule} from "./auth/auth.module";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -16,9 +19,13 @@ import {HomeModule} from "./home/home.module";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    HttpClientModule,
     NgbModule,
+    ReactiveFormsModule,
     HomeModule,
+    AuthModule,
+
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
