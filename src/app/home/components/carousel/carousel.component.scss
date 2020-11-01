@@ -1,0 +1,45 @@
+._1carousel {
+  width: 100%;
+  height: 400px;
+  // background-color: gray;
+  display: flex;
+  align-items: center;
+  background-color: #f8f9fa;
+  color: black;
+  img {
+    width: 500px;
+    height: 400px;
+  }
+  .content {
+    margin-left: 20px;
+    padding-right: 20px;
+    .category {
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 16px;
+      margin-bottom: 0px;
+      color: #0a5cbf;
+    }
+    .title {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 27px;
+      margin-bottom: 10px;
+    }
+    .description {
+      font-size: 16px;
+      font-weight: normal;
+      margin: 0px;
+      color: #313131;
+    }
+    .author {
+      margin: 10px 0px 0px 0px;
+    }
+    .time {
+      margin: 0px;
+      color: #5a5a5a;
+      font-style: italic;
+    }
+  }
+}

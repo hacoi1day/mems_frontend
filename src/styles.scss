@@ -11,3 +11,15 @@
   margin: 0;
   padding: 0;
 }
+
+// Custom style carousel
+.carousel {
+  ol.carousel-indicators {
+    li {
+      background-color: gray;
+    }
+    li.active {
+      background-color: #0a5cbf;
+    }
+  }
+}

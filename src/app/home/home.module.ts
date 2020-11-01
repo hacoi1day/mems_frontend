@@ -5,6 +5,8 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { MembersComponent } from './components/members/members.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import {NgbCarouselModule} from "@ng-bootstrap/ng-bootstrap";
 
 
 
@@ -13,11 +15,13 @@ import { MembersComponent } from './components/members/members.component';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    MembersComponent
+    MembersComponent,
+    CarouselComponent,
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
+    NgbCarouselModule,
   ],
   providers: [
 
