@@ -10,12 +10,18 @@ import {HomeModule} from "./home/home.module";
 import {HttpClientModule} from "@angular/common/http";
 import {AuthModule} from "./auth/auth.module";
 import {ReactiveFormsModule} from "@angular/forms";
+import { TopComponent } from './components/top/top.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { LogoComponent } from './components/logo/logo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    TopComponent,
+    NavbarComponent,
+    LogoComponent
   ],
   imports: [
     BrowserModule,
