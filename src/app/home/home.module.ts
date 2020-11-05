@@ -7,6 +7,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { MembersComponent } from './components/members/members.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import {NgbCarouselModule} from "@ng-bootstrap/ng-bootstrap";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -22,6 +23,7 @@ import {NgbCarouselModule} from "@ng-bootstrap/ng-bootstrap";
     CommonModule,
     HomeRoutingModule,
     NgbCarouselModule,
+    ReactiveFormsModule,
   ],
   providers: [
 
