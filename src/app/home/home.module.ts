@@ -11,6 +11,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { TrendingComponent } from './components/trending/trending.component';
 import { PickComponent } from './components/pick/pick.component';
 import {ContactService} from "./services/contact.service";
+import { ListTrendingComponent } from './components/list-trending/list-trending.component';
 
 
 
@@ -23,6 +24,7 @@ import {ContactService} from "./services/contact.service";
     CarouselComponent,
     TrendingComponent,
     PickComponent,
+    ListTrendingComponent,
   ],
   imports: [
     CommonModule,
