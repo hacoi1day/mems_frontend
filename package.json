@@ -23,7 +23,7 @@
     "@ng-bootstrap/ng-bootstrap": "^7.0.0",
     "bootstrap": "^4.5.0",
     "rxjs": "~6.6.0",
-    "sweetalert2": "^10.9.0",
+    "sweetalert2": "^10.10.1",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },
@@ -33,7 +33,7 @@
     "@angular/compiler-cli": "~10.1.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
-    "@types/node": "^12.11.1",
+    "@types/node": "^12.19.6",
     "codelyzer": "^6.0.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",

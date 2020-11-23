@@ -13,7 +13,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { TopComponent } from './components/top/top.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LogoComponent } from './components/logo/logo.component';
-import {HelpersModule} from "./helpers/helpers.module";
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -22,14 +22,14 @@ import {HelpersModule} from "./helpers/helpers.module";
     FooterComponent,
     TopComponent,
     NavbarComponent,
-    LogoComponent
+    LogoComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     NgbModule,
     ReactiveFormsModule,
-    HelpersModule,
     HomeModule,
     AuthModule,
 
