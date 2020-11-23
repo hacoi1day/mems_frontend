@@ -8,9 +8,24 @@ import {URL_API} from "../../config/api";
 })
 export class AuthService {
 
+  public token: string = '';
+
   constructor(
     private http: HttpClient
-  ) { }
+  ) {
+    this.getToken();
+  }
+
+  getToken(): void {
+    let token = localStorage.getItem('token');
+    if (token) {
+      this.token = token;
+    }
+  }
+
+  saveToken(token): void {
+    this.token = token;
+  }
 
   register(req): Observable<any> {
     return this.http.post(`${URL_API}/auth/register`, req);
@@ -21,20 +36,18 @@ export class AuthService {
   }
 
   me(): Observable<any> {
-    let token = localStorage.getItem('token');
     return this.http.get(`${URL_API}/auth/me`, {
       headers: {
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${this.token}`
       }
     })
   }
 
   logout(): Observable<any> {
-    let token = localStorage.getItem('token');
     localStorage.clear();
     return this.http.get(`${URL_API}/auth/logout`, {
       headers: {
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${this.token}`
       }
     });
   }

@@ -19,20 +19,21 @@
         </li>
       </ul>
       <ul class="navbar-nav">
-        <ng-container *ngIf="!user; else userTemplate">
-          <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" routerLink="/auth/login">Đăng nhập</a>
-          </li>
-          <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" routerLink="/auth/register">Đăng ký</a>
-          </li>
-        </ng-container>
-        <ng-template #userTemplate>
+        <ng-container *ngIf="token; else login">
+
           <li class="nav-item" routerLinkActive="active">
             <a class="nav-link" routerLink="/auth/login">Trang cá nhân</a>
           </li>
           <li class="nav-item" routerLinkActive="active">
             <a class="nav-link" (click)="logout()">Đăng xuất</a>
+          </li>
+        </ng-container>
+        <ng-template #login>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/auth/login">Đăng nhập</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/auth/register">Đăng ký</a>
           </li>
         </ng-template>
 
