@@ -13,6 +13,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { TopComponent } from './components/top/top.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LogoComponent } from './components/logo/logo.component';
+import {HelpersModule} from "./helpers/helpers.module";
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { LogoComponent } from './components/logo/logo.component';
     HttpClientModule,
     NgbModule,
     ReactiveFormsModule,
+    HelpersModule,
     HomeModule,
     AuthModule,
 
