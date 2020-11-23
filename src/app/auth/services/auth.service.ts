@@ -2,29 +2,27 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {URL_API} from "../../config/api";
+import {LocalStorage} from "@ngx-pwa/local-storage";
+import {TokenService} from "./token.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  public token: string = '';
+  public token: unknown = '';
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private tokenService: TokenService,
   ) {
     this.getToken();
   }
 
   getToken(): void {
-    let token = localStorage.getItem('token');
-    if (token) {
+    this.tokenService.getToken().subscribe(token => {
       this.token = token;
-    }
-  }
-
-  saveToken(token): void {
-    this.token = token;
+    });
   }
 
   register(req): Observable<any> {
@@ -44,7 +42,6 @@ export class AuthService {
   }
 
   logout(): Observable<any> {
-    localStorage.clear();
     return this.http.get(`${URL_API}/auth/logout`, {
       headers: {
         'Authorization': `Bearer ${this.token}`

@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
 import {LoadingService} from "../../../helpers/services/loading.service";
+import {TokenService} from "../../services/token.service";
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private loadingService: LoadingService,
-    private router: Router
+    private router: Router,
+    private tokenService: TokenService,
   ) { }
 
   ngOnInit(): void {
@@ -38,13 +40,10 @@ export class LoginComponent implements OnInit {
       // get user
       let {access_token, user} = res;
       // change token in auth service
-      this.authService.saveToken(access_token);
-      // save token and user to localStorage
-      localStorage.setItem('token', access_token);
-      localStorage.setItem('user', JSON.stringify(user));
-      this.loadingService.hide();
-      // navigate to home
-      this.router.navigate(['/home']).then();
+      this.tokenService.setToken(access_token);
+      this.router.navigate(['/home']).then(() => {
+        this.loadingService.hide();
+      });
     });
   }
 

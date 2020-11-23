@@ -1,33 +1,44 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewChecked, Component, OnInit} from '@angular/core';
 import {AuthService} from "../../auth/services/auth.service";
 import {Router} from "@angular/router";
+import {LoadingService} from "../../helpers/services/loading.service";
+import {TokenService} from "../../auth/services/token.service";
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, AfterViewChecked {
 
-  public token: string = '';
+  public token: unknown = '';
 
   constructor(
     private authService: AuthService,
     private router: Router,
+    private loadingService: LoadingService,
+    private tokenService: TokenService
   ) { }
 
   ngOnInit(): void {
-    this.checkToken();
+    this.tokenService.getToken().subscribe(token => {
+      this.token = token;
+    });
   }
 
-  checkToken(): void {
-    this.token = this.authService.token;
+  ngAfterViewChecked(): void {
+
   }
+
 
   logout(): void {
+    this.loadingService.show();
     this.authService.logout().subscribe(res => {
-      this.router.navigate(['/home']).then();
-    });
+      this.tokenService.removeToken();
+      this.router.navigate(['/home']).then(() => {
+        this.loadingService.hide();
+      });
+    })
   }
 
 }
