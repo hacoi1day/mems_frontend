@@ -13,7 +13,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { TopComponent } from './components/top/top.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LogoComponent } from './components/logo/logo.component';
-import { LoadingComponent } from './components/loading/loading.component';
+import {HelpersModule} from "./helpers/helpers.module";
 
 @NgModule({
   declarations: [
@@ -23,7 +23,6 @@ import { LoadingComponent } from './components/loading/loading.component';
     TopComponent,
     NavbarComponent,
     LogoComponent,
-    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +31,7 @@ import { LoadingComponent } from './components/loading/loading.component';
     ReactiveFormsModule,
     HomeModule,
     AuthModule,
+    HelpersModule,
 
     AppRoutingModule,
   ],
