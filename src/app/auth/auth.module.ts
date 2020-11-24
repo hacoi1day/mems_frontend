@@ -7,8 +7,7 @@ import {AuthRoutingModule} from "./auth.routing.module";
 import {ReactiveFormsModule} from "@angular/forms";
 import {AuthService} from "./services/auth.service";
 import { ProfileComponent } from './components/profile/profile.component';
-
-
+import {TokenService} from "./services/token.service";
 
 @NgModule({
   declarations: [
@@ -24,6 +23,7 @@ import { ProfileComponent } from './components/profile/profile.component';
   ],
   providers: [
     AuthService,
+    TokenService,
   ]
 })
 export class AuthModule { }

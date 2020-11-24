@@ -10,6 +10,7 @@ import {TokenService} from "./token.service";
 export class AuthService {
 
   public token: unknown = '';
+  public isLogin: boolean = false;
 
   constructor(
     private http: HttpClient,
@@ -21,6 +22,9 @@ export class AuthService {
   getToken(): void {
     this.tokenService.getToken().subscribe(token => {
       this.token = token;
+      if (token != '') {
+        this.isLogin = true;
+      }
     });
   }
 
@@ -29,6 +33,7 @@ export class AuthService {
   }
 
   login(req): Observable<any> {
+    this.isLogin = true;
     return this.http.post(`${URL_API}/auth/login`, req);
   }
 
@@ -41,6 +46,7 @@ export class AuthService {
   }
 
   logout(): Observable<any> {
+    this.isLogin = false;
     return this.http.get(`${URL_API}/auth/logout`, {
       headers: {
         'Authorization': `Bearer ${this.token}`
