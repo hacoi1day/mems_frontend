@@ -1,47 +1,50 @@
 <div class="row">
   <div class="col-sm-6">
+
+  </div>
+  <div class="col-sm-6">
     <div class="card">
-      <div class="card-header text-white bg-primary">
-        <h6>Register</h6>
+      <div class="card-header">
+        <span>Đăng ký</span>
       </div>
       <div class="card-body">
         <div class="register">
           <form [formGroup]="formRegister" (ngSubmit)="onSubmit($event);">
             <div class="form-group">
-              <label for="name">Name</label>
+              <label for="name">Họ và tên</label>
               <input
                 type="text"
                 class="form-control"
                 id="name"
                 name="name"
-                placeholder="Name"
+                placeholder="Họ và tên"
                 formControlName="name"
               />
             </div>
             <div class="form-group">
-              <label for="username">username</label>
+              <label for="email">Email</label>
               <input
-                type="text"
+                type="email"
                 class="form-control"
-                id="username"
-                name="username"
-                placeholder="username"
-                formControlName="username"
+                id="email"
+                name="email"
+                placeholder="Email"
+                formControlName="email"
               />
             </div>
             <div class="form-group">
-              <label for="password">password</label>
+              <label for="password">Mật khẩu</label>
               <input
                 type="password"
                 class="form-control"
                 id="password"
                 name="password"
-                placeholder="password"
+                placeholder="Mật khẩu"
                 formControlName="password"
               />
             </div>
             <div class="form-group">
-              <button class="btn btn-success">Register</button>
+              <button type="submit" class="btn btn-success">Đăng ký</button>
             </div>
           </form>
         </div>
