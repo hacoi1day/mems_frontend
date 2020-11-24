@@ -9,7 +9,7 @@ import {TokenService} from "../../auth/services/token.service";
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit, AfterViewChecked {
+export class NavbarComponent implements OnInit {
 
   public token: unknown = '';
 
@@ -25,11 +25,6 @@ export class NavbarComponent implements OnInit, AfterViewChecked {
       this.token = token;
     });
   }
-
-  ngAfterViewChecked(): void {
-
-  }
-
 
   logout(): void {
     this.loadingService.show();

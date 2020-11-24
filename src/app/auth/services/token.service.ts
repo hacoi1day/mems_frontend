@@ -17,8 +17,8 @@ export class TokenService {
     this.token = new BehaviorSubject<string>(token);
   }
 
-  getToken(): Observable<string> {
-    return this.token.asObservable<string>();
+  getToken(): Observable<unknown> {
+    return this.token.asObservable();
   }
   setToken(token: string): void {
     this.token.next(token);

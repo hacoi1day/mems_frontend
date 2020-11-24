@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {URL_API} from "../../config/api";
-import {LocalStorage} from "@ngx-pwa/local-storage";
 import {TokenService} from "./token.service";
 
 @Injectable({
